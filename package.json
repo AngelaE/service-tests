@@ -1,0 +1,19 @@
+{
+  "name": "service-tests",
+  "version": "1.0.0",
+  "description": "This repository contains samples for service tests.",
+  "scripts": {
+    "generate-book-client": "autorest .src/book.integrationtests/BookApiClient/readme.md",
+    "generate-bookstats-client": "autorest ./src/BookStats.Client/readme.md",
+    "start-api": "dotnet run --project ./src/Book.Api",
+    "test-integration": "dotnet test ./src/book.integrationtests"
+  },
+  "author": "Angela Evans",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngelaE/openapi-sample/issues"
+  },
+  "devDependencies": {
+    "autorest": "^3.0.6322"
+  }
+}

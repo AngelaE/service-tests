@@ -1,0 +1,34 @@
+﻿openapi: 3.0.0
+info:
+  description: This is a really dumb API containing book stats
+  version: 1.0.0
+  title: Book Stats
+paths:
+  '/bookstat/{bookid}':
+    get:
+      summary: Get stats for a book
+      operationId: GetBookStats
+      parameters:
+        - name: bookid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookStats'
+components:
+  schemas:
+    BookStats:
+      type: object
+      properties:
+        bookId:
+          type: integer
+          format: int32
+        copiesSold:
+          type: integer
+          format: int632

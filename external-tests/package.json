@@ -1,0 +1,34 @@
+{
+  "name": "componenttestsmountebank",
+  "version": "1.0.0",
+  "description": "Test using Mountebank for mocking",
+  "main": "index.js",
+  "scripts": {
+    "generate-book-client": "autorest ./src/book/readme.md",
+    "generate-book-stats": "autorest ./src/bookstats/readme.md",
+    "test": "set ENV=TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' & mocha -r ts-node/register 'test/**/*.ts'",
+    "test-adhoc": "set ENV=TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' & mocha -r ts-node/register",
+    "run-file": "set ENV=TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' & node ",
+    "build": "tsc"
+  },
+  "author": "Angela Evans",
+  "license": "ISC",
+  "dependencies": {
+    "@anev/ts-mountebank": "0.0.2",
+    "@azure/ms-rest-js": "^2.5.0",
+    "es6-promises": "^1.0.10",
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "autorest": "^3.2.0",
+    "chai": "^4.3.3",
+    "eslint": "^7.21.0",
+    "mocha": "^8.3.0",
+    "prettier": "2.2.1",
+    "ts-node": "^9.1.1"
+  }
+}

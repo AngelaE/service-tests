@@ -1,0 +1,9 @@
+node_modules/
+bin/
+obj/
+dist/
+BookApiConsumer.TypeScript/code-model-v1
+.vs/
+BookApiConsumer.TypeScript/dist/
+BookStats/Autorest/code-model-v1
+ComponentTestsMountebank/dist/

@@ -1,0 +1,959 @@
+{
+ "$id": "1",
+ "modelTypes": [
+  {
+   "$id": "2",
+   "$type": "CompositeType",
+   "properties": [
+    {
+     "$id": "3",
+     "isReadOnly": false,
+     "realPath": [
+      "id"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "4",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "5",
+      "fixed": false
+     },
+     "isRequired": true,
+     "isConstant": false,
+     "name": {
+      "$id": "6",
+      "fixed": false,
+      "raw": "id"
+     },
+     "serializedName": "id",
+     "modelType": {
+      "$id": "7",
+      "$type": "PrimaryType",
+      "format": "int32",
+      "knownPrimaryType": "int",
+      "name": {
+       "$id": "8",
+       "fixed": false,
+       "raw": "Int"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "9",
+     "isReadOnly": false,
+     "realPath": [
+      "title"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "10",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "11",
+      "fixed": false
+     },
+     "isRequired": true,
+     "isConstant": false,
+     "name": {
+      "$id": "12",
+      "fixed": false,
+      "raw": "title"
+     },
+     "serializedName": "title",
+     "modelType": {
+      "$id": "13",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "14",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "15",
+     "isReadOnly": false,
+     "realPath": [
+      "author"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "16",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "17",
+      "fixed": false
+     },
+     "isRequired": true,
+     "isConstant": false,
+     "name": {
+      "$id": "18",
+      "fixed": false,
+      "raw": "author"
+     },
+     "serializedName": "author",
+     "modelType": {
+      "$id": "19",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "20",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "21",
+     "isReadOnly": false,
+     "realPath": [
+      "summary"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "22",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "23",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "24",
+      "fixed": false,
+      "raw": "summary"
+     },
+     "serializedName": "summary",
+     "modelType": {
+      "$id": "25",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "26",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "27",
+     "isReadOnly": false,
+     "realPath": [
+      "type"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "28",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "29",
+      "fixed": false
+     },
+     "extensions": {
+      "x-ms-metadata": {
+       "apiVersions": [
+        "v1"
+       ],
+       "filename": [
+        "mem:///110?oai3.shaken.json"
+       ],
+       "name": "Type",
+       "originalLocations": [
+        "http://localhost:5000/swagger/v1/swagger.json#/components/schemas/Type"
+       ]
+      },
+      "x-ms-enum": {
+       "name": "Type",
+       "modelAsString": true
+      }
+     },
+     "isRequired": true,
+     "isConstant": false,
+     "name": {
+      "$id": "30",
+      "fixed": false,
+      "raw": "type"
+     },
+     "serializedName": "type",
+     "modelType": {
+      "$id": "31",
+      "$type": "EnumType",
+      "values": [
+       {
+        "$id": "32",
+        "name": "Hardcover",
+        "serializedName": "Hardcover"
+       },
+       {
+        "$id": "33",
+        "name": "Paperback",
+        "serializedName": "Paperback"
+       },
+       {
+        "$id": "34",
+        "name": "eBook",
+        "serializedName": "eBook"
+       }
+      ],
+      "oldModelAsString": false,
+      "modelAsString": true,
+      "underlyingType": {
+       "$id": "35",
+       "$type": "PrimaryType",
+       "knownPrimaryType": "string",
+       "name": {
+        "$id": "36",
+        "fixed": false,
+        "raw": "String"
+       },
+       "deprecated": false
+      },
+      "name": {
+       "$id": "37",
+       "fixed": false,
+       "raw": "Type"
+      },
+      "deprecated": false
+     }
+    }
+   ],
+   "serializedName": "Book",
+   "containsConstantProperties": false,
+   "name": {
+    "$id": "38",
+    "fixed": false,
+    "raw": "Book"
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1"
+     ],
+     "filename": [
+      "mem:///110?oai3.shaken.json"
+     ],
+     "name": "Book",
+     "originalLocations": [
+      "http://localhost:5000/swagger/v1/swagger.json#/components/schemas/Book"
+     ]
+    }
+   },
+   "deprecated": false
+  },
+  {
+   "$id": "39",
+   "$type": "CompositeType",
+   "properties": [
+    {
+     "$id": "40",
+     "isReadOnly": false,
+     "realPath": [
+      "id"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "41",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "42",
+      "fixed": false
+     },
+     "isRequired": true,
+     "isConstant": false,
+     "name": {
+      "$id": "43",
+      "fixed": false,
+      "raw": "id"
+     },
+     "serializedName": "id",
+     "modelType": {
+      "$id": "44",
+      "$type": "PrimaryType",
+      "format": "int32",
+      "knownPrimaryType": "int",
+      "name": {
+       "$id": "45",
+       "fixed": false,
+       "raw": "Int"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "46",
+     "isReadOnly": false,
+     "realPath": [
+      "title"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "47",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "48",
+      "fixed": false
+     },
+     "isRequired": true,
+     "isConstant": false,
+     "name": {
+      "$id": "49",
+      "fixed": false,
+      "raw": "title"
+     },
+     "serializedName": "title",
+     "modelType": {
+      "$id": "50",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "51",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "52",
+     "isReadOnly": false,
+     "realPath": [
+      "author"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "53",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "54",
+      "fixed": false
+     },
+     "isRequired": true,
+     "isConstant": false,
+     "name": {
+      "$id": "55",
+      "fixed": false,
+      "raw": "author"
+     },
+     "serializedName": "author",
+     "modelType": {
+      "$id": "56",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "57",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "58",
+     "isReadOnly": false,
+     "realPath": [
+      "summary"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "59",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "60",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "61",
+      "fixed": false,
+      "raw": "summary"
+     },
+     "serializedName": "summary",
+     "modelType": {
+      "$id": "62",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "63",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "64",
+     "isReadOnly": false,
+     "realPath": [
+      "type"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "65",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "66",
+      "fixed": false
+     },
+     "extensions": {
+      "x-ms-metadata": {
+       "apiVersions": [
+        "v1"
+       ],
+       "filename": [
+        "mem:///110?oai3.shaken.json"
+       ],
+       "name": "Type",
+       "originalLocations": [
+        "http://localhost:5000/swagger/v1/swagger.json#/components/schemas/Type"
+       ]
+      },
+      "x-ms-enum": {
+       "name": "Type",
+       "modelAsString": true
+      }
+     },
+     "isRequired": true,
+     "isConstant": false,
+     "name": {
+      "$id": "67",
+      "fixed": false,
+      "raw": "type"
+     },
+     "serializedName": "type",
+     "modelType": {
+      "$ref": "31"
+     }
+    },
+    {
+     "$id": "68",
+     "isReadOnly": false,
+     "realPath": [
+      "copiesSold"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "69",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "70",
+      "fixed": false
+     },
+     "extensions": {
+      "x-nullable": true
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "71",
+      "fixed": false,
+      "raw": "copiesSold"
+     },
+     "serializedName": "copiesSold",
+     "modelType": {
+      "$id": "72",
+      "$type": "PrimaryType",
+      "format": "int32",
+      "knownPrimaryType": "int",
+      "name": {
+       "$id": "73",
+       "fixed": false,
+       "raw": "Int"
+      },
+      "deprecated": false
+     }
+    }
+   ],
+   "serializedName": "BookWithStats",
+   "containsConstantProperties": false,
+   "name": {
+    "$id": "74",
+    "fixed": false,
+    "raw": "BookWithStats"
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1"
+     ],
+     "filename": [
+      "mem:///110?oai3.shaken.json"
+     ],
+     "name": "BookWithStats",
+     "originalLocations": [
+      "http://localhost:5000/swagger/v1/swagger.json#/components/schemas/BookWithStats"
+     ]
+    }
+   },
+   "deprecated": false
+  }
+ ],
+ "enumTypes": [
+  {
+   "$ref": "31"
+  }
+ ],
+ "name": "BookApi",
+ "namespace": "IntegrationTests.Clients",
+ "modelsName": "Models",
+ "apiVersion": "v1",
+ "baseUrl": "http://localhost",
+ "properties": [
+  {
+   "$id": "75",
+   "isReadOnly": false,
+   "realPath": [
+    "bookId"
+   ],
+   "collectionFormat": "none",
+   "defaultValue": {
+    "$id": "76",
+    "fixed": false
+   },
+   "deprecated": false,
+   "documentation": {
+    "$id": "77",
+    "fixed": false
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1"
+     ],
+     "filename": [
+      "mem:///110?oai3.shaken.json"
+     ],
+     "name": "paths·fito1e·books-bookid·get·parameters·0",
+     "originalLocations": [
+      "http://localhost:5000/swagger/v1/swagger.json#/components/parameters/paths·fito1e·books-bookid·get·parameters·0"
+     ]
+    },
+    "x-ms-parameter-location": "method"
+   },
+   "isRequired": true,
+   "isConstant": false,
+   "name": {
+    "$id": "78",
+    "fixed": false,
+    "raw": "bookId"
+   },
+   "serializedName": "bookId",
+   "modelType": {
+    "$id": "79",
+    "$type": "PrimaryType",
+    "format": "int32",
+    "knownPrimaryType": "int",
+    "name": {
+     "$id": "80",
+     "fixed": false,
+     "raw": "Int"
+    },
+    "deprecated": false
+   }
+  }
+ ],
+ "operations": [
+  {
+   "$id": "81",
+   "methods": [
+    {
+     "$id": "82",
+     "name": {
+      "$id": "83",
+      "fixed": false,
+      "raw": "GetAll"
+     },
+     "group": {
+      "$id": "84",
+      "fixed": false,
+      "raw": "Books"
+     },
+     "serializedName": "Books_GetAll",
+     "url": "/Books",
+     "isAbsoluteUrl": false,
+     "httpMethod": "get",
+     "responses": {
+      "OK": {
+       "$id": "85",
+       "body": {
+        "$id": "86",
+        "$type": "SequenceType",
+        "elementType": {
+         "$ref": "2"
+        },
+        "name": {
+         "$id": "87",
+         "fixed": false
+        },
+        "deprecated": false
+       },
+       "extensions": {
+        "$id": "88",
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1"
+         ],
+         "filename": [
+          "mem:///110?oai3.shaken.json"
+         ],
+         "name": "paths·n0ao9n·books·get·responses·200",
+         "originalLocations": [
+          "http://localhost:5000/swagger/v1/swagger.json#/components/responses/paths·n0ao9n·books·get·responses·200"
+         ]
+        }
+       },
+       "isNullable": true
+      }
+     },
+     "defaultResponse": {
+      "$id": "89",
+      "isNullable": true
+     },
+     "returnType": {
+      "$id": "90",
+      "body": {
+       "$ref": "86"
+      },
+      "isNullable": true
+     },
+     "summary": "Get the list of all books",
+     "requestContentType": "application/json; charset=utf-8",
+     "responseContentTypes": [
+      "application/json"
+     ],
+     "extensions": {
+      "servers": []
+     },
+     "deprecated": false,
+     "hidden": false
+    },
+    {
+     "$id": "91",
+     "parameters": [
+      {
+       "$id": "92",
+       "location": "body",
+       "collectionFormat": "none",
+       "defaultValue": {
+        "$id": "93",
+        "fixed": false
+       },
+       "deprecated": false,
+       "documentation": {
+        "$id": "94",
+        "fixed": false
+       },
+       "extensions": {
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1"
+         ],
+         "filename": [
+          "mem:///110?oai3.shaken.json"
+         ],
+         "name": "paths·1l508g4·books·post·requestbody",
+         "originalLocations": [
+          "http://localhost:5000/swagger/v1/swagger.json#/components/requestBodies/paths·1l508g4·books·post·requestbody"
+         ]
+        }
+       },
+       "isRequired": false,
+       "isConstant": false,
+       "name": {
+        "$id": "95",
+        "fixed": false,
+        "raw": "body"
+       },
+       "serializedName": "body",
+       "modelType": {
+        "$ref": "2"
+       }
+      }
+     ],
+     "name": {
+      "$id": "96",
+      "fixed": false,
+      "raw": "StoreBook"
+     },
+     "group": {
+      "$id": "97",
+      "fixed": false,
+      "raw": "Books"
+     },
+     "serializedName": "Books_StoreBook",
+     "url": "/Books",
+     "isAbsoluteUrl": false,
+     "httpMethod": "post",
+     "responses": {
+      "OK": {
+       "$id": "98",
+       "body": {
+        "$ref": "2"
+       },
+       "extensions": {
+        "$id": "99",
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1"
+         ],
+         "filename": [
+          "mem:///110?oai3.shaken.json"
+         ],
+         "name": "paths·17u4ep9·books·post·responses·200",
+         "originalLocations": [
+          "http://localhost:5000/swagger/v1/swagger.json#/components/responses/paths·17u4ep9·books·post·responses·200"
+         ]
+        }
+       },
+       "isNullable": true
+      }
+     },
+     "defaultResponse": {
+      "$id": "100",
+      "isNullable": true
+     },
+     "returnType": {
+      "$id": "101",
+      "body": {
+       "$ref": "2"
+      },
+      "isNullable": true
+     },
+     "requestContentType": "application/json; charset=utf-8",
+     "responseContentTypes": [
+      "application/json"
+     ],
+     "extensions": {
+      "servers": []
+     },
+     "deprecated": false,
+     "hidden": false
+    },
+    {
+     "$id": "102",
+     "parameters": [
+      {
+       "$id": "103",
+       "clientProperty": {
+        "$ref": "75"
+       },
+       "location": "path",
+       "collectionFormat": "none",
+       "defaultValue": {
+        "$id": "104",
+        "fixed": false
+       },
+       "deprecated": false,
+       "documentation": {
+        "$id": "105",
+        "fixed": false
+       },
+       "extensions": {
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1"
+         ],
+         "filename": [
+          "mem:///110?oai3.shaken.json"
+         ],
+         "name": "paths·fito1e·books-bookid·get·parameters·0",
+         "originalLocations": [
+          "http://localhost:5000/swagger/v1/swagger.json#/components/parameters/paths·fito1e·books-bookid·get·parameters·0"
+         ]
+        },
+        "x-ms-parameter-location": "method"
+       },
+       "isRequired": true,
+       "isConstant": false,
+       "name": {
+        "$id": "106",
+        "fixed": false,
+        "raw": "bookId"
+       },
+       "serializedName": "bookId",
+       "modelType": {
+        "$id": "107",
+        "$type": "PrimaryType",
+        "format": "int32",
+        "knownPrimaryType": "int",
+        "name": {
+         "$id": "108",
+         "fixed": false,
+         "raw": "Int"
+        },
+        "deprecated": false
+       }
+      }
+     ],
+     "name": {
+      "$id": "109",
+      "fixed": false,
+      "raw": "Get"
+     },
+     "group": {
+      "$id": "110",
+      "fixed": false,
+      "raw": "Books"
+     },
+     "serializedName": "Books_Get",
+     "url": "/Books/{bookId}",
+     "isAbsoluteUrl": false,
+     "httpMethod": "get",
+     "responses": {
+      "OK": {
+       "$id": "111",
+       "body": {
+        "$ref": "39"
+       },
+       "extensions": {
+        "$id": "112",
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1"
+         ],
+         "filename": [
+          "mem:///110?oai3.shaken.json"
+         ],
+         "name": "paths·9wqv16·books-bookid·get·responses·200",
+         "originalLocations": [
+          "http://localhost:5000/swagger/v1/swagger.json#/components/responses/paths·9wqv16·books-bookid·get·responses·200"
+         ]
+        }
+       },
+       "isNullable": true
+      }
+     },
+     "defaultResponse": {
+      "$id": "113",
+      "isNullable": true
+     },
+     "returnType": {
+      "$id": "114",
+      "body": {
+       "$ref": "39"
+      },
+      "isNullable": true
+     },
+     "requestContentType": "application/json; charset=utf-8",
+     "responseContentTypes": [
+      "application/json"
+     ],
+     "extensions": {
+      "servers": []
+     },
+     "deprecated": false,
+     "hidden": false
+    }
+   ],
+   "name": {
+    "$id": "115",
+    "fixed": false,
+    "raw": "Books"
+   },
+   "typeName": {
+    "$id": "116",
+    "fixed": false
+   },
+   "nameForProperty": "Books"
+  },
+  {
+   "$id": "117",
+   "methods": [
+    {
+     "$id": "118",
+     "name": {
+      "$id": "119",
+      "fixed": false,
+      "raw": "Ping"
+     },
+     "group": {
+      "$id": "120",
+      "fixed": false,
+      "raw": "Service"
+     },
+     "serializedName": "Service_Ping",
+     "url": "/api/Service/ping",
+     "isAbsoluteUrl": false,
+     "httpMethod": "get",
+     "responses": {
+      "OK": {
+       "$id": "121",
+       "extensions": {
+        "$id": "122",
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1"
+         ],
+         "filename": [
+          "mem:///110?oai3.shaken.json"
+         ],
+         "name": "paths·6dm0jc·api-service-ping·get·responses·200",
+         "originalLocations": [
+          "http://localhost:5000/swagger/v1/swagger.json#/components/responses/paths·6dm0jc·api-service-ping·get·responses·200"
+         ]
+        }
+       },
+       "isNullable": true
+      }
+     },
+     "defaultResponse": {
+      "$id": "123",
+      "isNullable": true
+     },
+     "returnType": {
+      "$id": "124",
+      "isNullable": true
+     },
+     "requestContentType": "application/json; charset=utf-8",
+     "responseContentTypes": [
+      "application/json"
+     ],
+     "extensions": {
+      "servers": []
+     },
+     "deprecated": false,
+     "hidden": false
+    }
+   ],
+   "name": {
+    "$id": "125",
+    "fixed": false,
+    "raw": "Service"
+   },
+   "typeName": {
+    "$id": "126",
+    "fixed": false
+   },
+   "nameForProperty": "Service"
+  }
+ ]
+}
