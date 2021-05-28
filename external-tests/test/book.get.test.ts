@@ -1,10 +1,10 @@
 import {assert, expect} from "chai"
 
 import { Predicate, Response, Imposter, Mountebank, Stub, EqualPredicate, HttpMethod, DefaultStub, NotFoundResponse } from '@anev/ts-mountebank';
-import { BookStatsModel } from "../src/bookstats";
+import { Stats } from "../src/bookstats";
 import { BookApiClient } from "../src/book/autorest/bookApiClient";
 
-const port = 12345;
+const port = 5010;
 const testPath = '/testpath';
 
 
@@ -17,11 +17,11 @@ describe("Book - GetBook by Id", () => {
 
     
     it('returns a book with stats', async () => {
-        const bookStats: BookStatsModel = { bookId: 1, copiesSold: 2405};
+        const bookStats: Stats = { bookId: 1, copiesSold: 2405};
  
         let imposter = new Imposter().withPort(port).withStub(
                 new Stub()
-                    .withPredicate(new EqualPredicate().withMethod(HttpMethod.GET).withPath(`/bookstat/1`))
+                    .withPredicate(new EqualPredicate().withMethod(HttpMethod.GET).withPath(`/Stats/1`))
                     .withResponse(new Response().withStatusCode(200).withJSONBody(bookStats))
                     )
                 .withStub(new Stub().withResponse(new NotFoundResponse()));

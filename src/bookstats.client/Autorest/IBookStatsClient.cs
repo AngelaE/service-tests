@@ -4,18 +4,12 @@
 // regenerated.
 // </auto-generated>
 
-namespace BookStats.Autorest
+namespace BookStatsClient.Autorest
 {
-    using Microsoft.Rest;
     using Models;
     using Newtonsoft.Json;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Threading;
-    using System.Threading.Tasks;
 
     /// <summary>
-    /// This is a really dumb API containing book stats
     /// </summary>
     public partial interface IBookStatsClient : System.IDisposable
     {
@@ -36,17 +30,9 @@ namespace BookStats.Autorest
 
 
         /// <summary>
-        /// Get stats for a book
+        /// Gets the IStatsOperations.
         /// </summary>
-        /// <param name='bookid'>
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        Task<HttpOperationResponse<BookStatsModel>> GetBookStatsWithHttpMessagesAsync(int bookid, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        IStatsOperations Stats { get; }
 
     }
 }

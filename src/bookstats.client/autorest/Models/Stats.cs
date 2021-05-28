@@ -4,25 +4,25 @@
 // regenerated.
 // </auto-generated>
 
-namespace BookStats.Autorest.Models
+namespace BookStatsClient.Autorest.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
-    public partial class BookStatsModel
+    public partial class Stats
     {
         /// <summary>
-        /// Initializes a new instance of the BookStatsModel class.
+        /// Initializes a new instance of the Stats class.
         /// </summary>
-        public BookStatsModel()
+        public Stats()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BookStatsModel class.
+        /// Initializes a new instance of the Stats class.
         /// </summary>
-        public BookStatsModel(int? bookId = default(int?), int? copiesSold = default(int?))
+        public Stats(int? bookId = default(int?), int? copiesSold = default(int?))
         {
             BookId = bookId;
             CopiesSold = copiesSold;

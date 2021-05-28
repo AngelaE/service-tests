@@ -1,4 +1,4 @@
-﻿namespace BookApi.OpenApi
+﻿namespace BookStats.Api.OpenApi
 {
   public class ContentTypes
   {

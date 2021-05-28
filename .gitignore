@@ -7,3 +7,11 @@ BookApiConsumer.TypeScript/code-model-v1
 BookApiConsumer.TypeScript/dist/
 BookStats/Autorest/code-model-v1
 ComponentTestsMountebank/dist/
+external-tests/src/bookstats/autorest/operations/statsOperations.ts
+external-tests/src/bookstats/autorest/models/mappers.ts
+external-tests/src/bookstats/code-model-v1
+external-tests/src/bookstats/autorest/bookStatsApi.ts
+external-tests/src/bookstats/autorest/bookStatsApiContext.ts
+external-tests/src/bookstats/autorest/models/parameters.ts
+external-tests/src/bookstats/autorest/models/statsOperationsMappers.ts
+external-tests/src/bookstats/autorest/operations/index.ts

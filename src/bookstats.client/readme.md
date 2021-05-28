@@ -11,10 +11,10 @@ use-extension:
   "@microsoft.azure/autorest.csharp": "2.3.82"
 
 version: 3.0.6247 #autorest version
-input-file: bookstats.yaml
+input-file: http://localhost:5010/swagger/v1/swagger.json
 output-folder: ./autorest
 csharp: 
-  namespace: BookStats.Autorest
+  namespace: BookStatsClient.Autorest
   override-client-name: BookStatsClient
   client-side-validation: false
 ```

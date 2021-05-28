@@ -4,44 +4,38 @@
 // regenerated.
 // </auto-generated>
 
-namespace BookStats.Autorest
+namespace BookStatsClient.Autorest
 {
     using Models;
     using System.Threading;
     using System.Threading.Tasks;
 
     /// <summary>
-    /// Extension methods for BookStatsClient.
+    /// Extension methods for StatsOperations.
     /// </summary>
-    public static partial class BookStatsClientExtensions
+    public static partial class StatsOperationsExtensions
     {
-            /// <summary>
-            /// Get stats for a book
-            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='bookid'>
+            /// <param name='bookId'>
             /// </param>
-            public static BookStatsModel GetBookStats(this IBookStatsClient operations, int bookid)
+            public static Stats Get(this IStatsOperations operations, int bookId)
             {
-                return operations.GetBookStatsAsync(bookid).GetAwaiter().GetResult();
+                return operations.GetAsync(bookId).GetAwaiter().GetResult();
             }
 
-            /// <summary>
-            /// Get stats for a book
-            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='bookid'>
+            /// <param name='bookId'>
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<BookStatsModel> GetBookStatsAsync(this IBookStatsClient operations, int bookid, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Stats> GetAsync(this IStatsOperations operations, int bookId, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetBookStatsWithHttpMessagesAsync(bookid, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(bookId, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

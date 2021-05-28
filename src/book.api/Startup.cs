@@ -1,7 +1,7 @@
 using BookApi.Configuration;
 using BookApi.OpenApi;
 using BookApi.Store;
-using BookStats.Autorest;
+using BookStatsClient.Autorest;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Controllers;
@@ -17,6 +17,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Text.Json.Serialization;
+using StatsClient = BookStatsClient.Autorest.BookStatsClient;
 
 namespace BookApi
 {
@@ -40,14 +41,14 @@ namespace BookApi
           .AddJsonOptions(o => { o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); })
           .Services.AddSingleton<IBookStore, InMemoryBookStore>();
 
-      services.AddHttpClient<IBookStatsClient, BookStatsClient>();
+      services.AddHttpClient<IBookStatsClient, StatsClient>();
       services.AddScoped<IServiceDiscovery, ServiceDiscovery>();
-      services.AddScoped<IBookStatsClient, BookStatsClient>(c =>
+      services.AddScoped<IBookStatsClient, StatsClient>(c =>
      {
        var httpClient = c.GetRequiredService<IHttpClientFactory>()
                  .CreateClient(nameof(IBookStatsClient));
        var baseUri = c.GetRequiredService<IServiceDiscovery>().GetServiceUri("bookstats");
-       return new BookStatsClient(baseUri, httpClient);
+       return new StatsClient(baseUri, httpClient);
      });
 
 

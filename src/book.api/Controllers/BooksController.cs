@@ -1,8 +1,8 @@
 ﻿using BookApi.Models;
 using BookApi.OpenApi;
 using BookApi.Store;
-using BookStats.Autorest;
-using BookStats.Autorest.Models;
+using BookStatsClient.Autorest;
+using BookStatsClient.Autorest.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -20,14 +20,14 @@ namespace BookApi.Controllers
   public class BooksController : ControllerBase
   {
     private IBookStore _bookStore;
-    private IBookStatsClient _bookStats;
+    private IBookStatsClient _statsClient;
 
     private readonly ILogger<BooksController> _logger;
 
     public BooksController(IBookStore bookStore, IBookStatsClient bookStats, ILogger<BooksController> logger)
     {
       _bookStore = bookStore;
-      _bookStats = bookStats;
+      _statsClient = bookStats;
       _logger = logger;
     }
 
@@ -50,10 +50,10 @@ namespace BookApi.Controllers
       var book = await _bookStore.GetBook(bookId);
       if (book == null) return NotFound();
 
-      BookStatsModel stats = null;
+      Stats stats = null;
       try
       {
-        stats = _bookStats.GetBookStats(bookId);
+        stats = _statsClient.Stats.Get(bookId);
       }
       catch (Exception) { }
 

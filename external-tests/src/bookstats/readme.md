@@ -10,7 +10,7 @@ use-extension:
   "@microsoft.azure/autorest.typescript": "4.2.4"
 
 #version: 3.0.6247 #autorest version
-input-file: ../../../bookstats/bookstats.yaml
+input-file: http://localhost:5010/swagger/v1/swagger.json
 output-folder: .
 typescript: 
   source-code-folder-path: ./autorest

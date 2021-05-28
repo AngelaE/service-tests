@@ -46,10 +46,10 @@ namespace BookApi.IntegrationTests
       var createdBook = await AddBook();
       _factory.BookStats.Reset();
       _factory.BookStats.Given(
-          Request.Create().WithPath("/bookstat/1").UsingGet())
+          Request.Create().WithPath("/Stats/1").UsingGet())
         .RespondWith(
           Response.Create()
-          .WithBodyAsJson(new BookStats.Autorest.Models.BookStatsModel { BookId = 1, CopiesSold = 99 })
+          .WithBodyAsJson(new BookStatsClient.Autorest.Models.Stats{ BookId = 1, CopiesSold = 99 })
           .WithStatusCode(200));
 
       // Act

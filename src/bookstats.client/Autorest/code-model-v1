@@ -69,7 +69,7 @@
      "modelType": {
       "$id": "13",
       "$type": "PrimaryType",
-      "format": "int632",
+      "format": "int32",
       "knownPrimaryType": "int",
       "deprecated": false,
       "name": {
@@ -80,42 +80,41 @@
      }
     }
    ],
-   "serializedName": "BookStats",
+   "serializedName": "Stats",
    "containsConstantProperties": false,
    "name": {
     "$id": "15",
     "fixed": false,
-    "raw": "BookStatsModel"
+    "raw": "Stats"
    },
    "extensions": {
     "x-ms-metadata": {
      "apiVersions": [
-      "1.0.0"
+      "v1"
      ],
      "filename": [
       "mem:///110?oai3.shaken.json"
      ],
-     "name": "BookStats",
+     "name": "Stats",
      "originalLocations": [
-      "file:///C:/Projects/blog-aspnetcore-integration-tests/BookStats/bookstats.yaml#/components/schemas/BookStats"
+      "http://localhost:5010/swagger/v1/swagger.json#/components/schemas/Stats"
      ]
     }
    },
    "deprecated": false
   }
  ],
- "name": "BookStats",
- "namespace": "BookStats.Autorest",
+ "name": "BookStatsApi",
+ "namespace": "BookStatsClient.Autorest",
  "modelsName": "Models",
- "apiVersion": "1.0.0",
+ "apiVersion": "v1",
  "baseUrl": "http://localhost",
- "documentation": "This is a really dumb API containing book stats",
  "properties": [
   {
    "$id": "16",
    "isReadOnly": false,
    "realPath": [
-    "bookid"
+    "bookId"
    ],
    "collectionFormat": "none",
    "defaultValue": {
@@ -130,14 +129,14 @@
    "extensions": {
     "x-ms-metadata": {
      "apiVersions": [
-      "1.0.0"
+      "v1"
      ],
      "filename": [
       "mem:///110?oai3.shaken.json"
      ],
-     "name": "paths·1e4941l·bookstat-bookid·get·parameters·0",
+     "name": "paths·1hxs8h3·stats-bookid·get·parameters·0",
      "originalLocations": [
-      "file:///C:/Projects/blog-aspnetcore-integration-tests/BookStats/bookstats.yaml#/components/parameters/paths·1e4941l·bookstat-bookid·get·parameters·0"
+      "http://localhost:5010/swagger/v1/swagger.json#/components/parameters/paths·1hxs8h3·stats-bookid·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -147,12 +146,13 @@
    "name": {
     "$id": "19",
     "fixed": false,
-    "raw": "bookid"
+    "raw": "bookId"
    },
-   "serializedName": "bookid",
+   "serializedName": "bookId",
    "modelType": {
     "$id": "20",
     "$type": "PrimaryType",
+    "format": "int32",
     "knownPrimaryType": "int",
     "deprecated": false,
     "name": {
@@ -189,14 +189,14 @@
        "extensions": {
         "x-ms-metadata": {
          "apiVersions": [
-          "1.0.0"
+          "v1"
          ],
          "filename": [
           "mem:///110?oai3.shaken.json"
          ],
-         "name": "paths·1e4941l·bookstat-bookid·get·parameters·0",
+         "name": "paths·1hxs8h3·stats-bookid·get·parameters·0",
          "originalLocations": [
-          "file:///C:/Projects/blog-aspnetcore-integration-tests/BookStats/bookstats.yaml#/components/parameters/paths·1e4941l·bookstat-bookid·get·parameters·0"
+          "http://localhost:5010/swagger/v1/swagger.json#/components/parameters/paths·1hxs8h3·stats-bookid·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -206,12 +206,13 @@
        "name": {
         "$id": "27",
         "fixed": false,
-        "raw": "bookid"
+        "raw": "bookId"
        },
-       "serializedName": "bookid",
+       "serializedName": "bookId",
        "modelType": {
         "$id": "28",
         "$type": "PrimaryType",
+        "format": "int32",
         "knownPrimaryType": "int",
         "deprecated": false,
         "name": {
@@ -225,15 +226,15 @@
      "name": {
       "$id": "30",
       "fixed": false,
-      "raw": "GetBookStats"
+      "raw": "Get"
      },
      "group": {
       "$id": "31",
       "fixed": false,
-      "raw": ""
+      "raw": "Stats"
      },
-     "serializedName": "GetBookStats",
-     "url": "/bookstat/{bookid}",
+     "serializedName": "Stats_Get",
+     "url": "/Stats/{bookId}",
      "isAbsoluteUrl": false,
      "httpMethod": "get",
      "responses": {
@@ -246,14 +247,14 @@
         "$id": "33",
         "x-ms-metadata": {
          "apiVersions": [
-          "1.0.0"
+          "v1"
          ],
          "filename": [
           "mem:///110?oai3.shaken.json"
          ],
-         "name": "paths·1oa2ap7·bookstat-bookid·get·responses·200",
+         "name": "paths·93kmf9·stats-bookid·get·responses·200",
          "originalLocations": [
-          "file:///C:/Projects/blog-aspnetcore-integration-tests/BookStats/bookstats.yaml#/components/responses/paths·1oa2ap7·bookstat-bookid·get·responses·200"
+          "http://localhost:5010/swagger/v1/swagger.json#/components/responses/paths·93kmf9·stats-bookid·get·responses·200"
          ]
         }
        },
@@ -271,7 +272,6 @@
       },
       "isNullable": true
      },
-     "summary": "Get stats for a book",
      "requestContentType": "application/json; charset=utf-8",
      "responseContentTypes": [
       "application/json"
@@ -286,13 +286,13 @@
    "name": {
     "$id": "36",
     "fixed": false,
-    "raw": ""
+    "raw": "Stats"
    },
    "typeName": {
     "$id": "37",
     "fixed": false
    },
-   "nameForProperty": "BookStats"
+   "nameForProperty": "Stats"
   }
  ]
 }

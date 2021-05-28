@@ -2,7 +2,7 @@
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Linq;
 
-namespace BookApi.OpenApi
+namespace BookStats.Api.OpenApi
 {
   public class AdditionalPropertiesDocumentFilter : IDocumentFilter
   {
