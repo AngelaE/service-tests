@@ -1,9 +1,9 @@
 import { assert, expect } from "chai"
 
-import { Response, Imposter, Mountebank, Stub, EqualPredicate, HttpMethod, NotFoundResponse } from '@anev/ts-mountebank';
-import { Stats } from "../src/bookstats";
+import { Response, Imposter, Mountebank, Stub } from '@anev/ts-mountebank';
 import { BookApiClient } from "../src/book/autorest/bookApiClient";
 import * as config from '../src/config';
+import { RequestError } from "../src/request-error";
 
 describe("Book - GetBook by Id", () => {
 
@@ -16,7 +16,7 @@ describe("Book - GetBook by Id", () => {
             new Stub()
                 .withResponse(new Response()
                     .withStatusCode(500)
-                    .withJSONBody({ error: 'internal_server_error' }))
+                    .withJSONBody(new RequestError('Internal Server Error', 500)))
         );
 
         // act
@@ -29,7 +29,7 @@ describe("Book - GetBook by Id", () => {
         }
     })
 
-    it('returns a book without stats if no stats are available', async () => {
+    it('returns a book without stats if stat service returns internal server error', async () => {
         const book = await bookApi.books.get(1);
         expect(book.copiesSold).to.equal(null);
     })
