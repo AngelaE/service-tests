@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This repository contains samples for service tests.",
   "scripts": {
-    "generate-book-client": "autorest .src/book.integrationtests/BookApiClient/readme.md",
+    "generate-book-client": "autorest ./src/book.integrationtests/BookApiClient/readme.md",
     "generate-bookstats-client": "autorest ./src/BookStats.Client/readme.md",
     "start-api": "dotnet run --project ./src/Book.Api",
     "test-integration": "dotnet test ./src/book.integrationtests"

@@ -47,6 +47,7 @@ namespace BookApi
      {
        var httpClient = c.GetRequiredService<IHttpClientFactory>()
                  .CreateClient(nameof(IBookStatsClient));
+       httpClient.Timeout = TimeSpan.FromMilliseconds(200);
        var baseUri = c.GetRequiredService<IServiceDiscovery>().GetServiceUri("bookstats");
        return new StatsClient(baseUri, httpClient);
      });

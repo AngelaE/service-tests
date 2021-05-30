@@ -5,4 +5,3 @@
  */
 
 export * from "./books";
-export * from "./service";

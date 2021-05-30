@@ -12,7 +12,6 @@ import { BookApiClientContext } from "./bookApiClientContext";
 class BookApiClient extends BookApiClientContext {
   // Operation groups
   books: operations.Books;
-  service: operations.Service;
 
   /**
    * Initializes a new instance of the BookApiClient class.
@@ -21,7 +20,6 @@ class BookApiClient extends BookApiClientContext {
   constructor(options?: Models.BookApiClientOptions) {
     super(options);
     this.books = new operations.Books(this);
-    this.service = new operations.Service(this);
   }
 }
 

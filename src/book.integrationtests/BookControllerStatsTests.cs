@@ -68,8 +68,6 @@ namespace BookApi.IntegrationTests
         Id = 1,
         Title = "my new book",
         Author = "a great author",
-        Summary = "my summary is short",
-        Type = BookApi.Models.CoverType.eBook,
       };
 
       await bookStore.AddBook(book);

@@ -22,15 +22,11 @@ namespace IntegrationTests.Clients.Models
         /// <summary>
         /// Initializes a new instance of the Book class.
         /// </summary>
-        /// <param name="type">Possible values include: 'Hardcover',
-        /// 'Paperback', 'eBook'</param>
-        public Book(int id, string title, string author, Type type, string summary = default(string))
+        public Book(int id, string title, string author)
         {
             Id = id;
             Title = title;
             Author = author;
-            Summary = summary;
-            Type = type;
             CustomInit();
         }
 
@@ -53,18 +49,6 @@ namespace IntegrationTests.Clients.Models
         /// </summary>
         [JsonProperty(PropertyName = "author")]
         public string Author { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "summary")]
-        public string Summary { get; set; }
-
-        /// <summary>
-        /// Gets or sets possible values include: 'Hardcover', 'Paperback',
-        /// 'eBook'
-        /// </summary>
-        [JsonProperty(PropertyName = "type")]
-        public Type Type { get; set; }
 
     }
 }

@@ -19,11 +19,6 @@ namespace BookApi.Models
 
     [Required]
     public string Author { get; init; }
-
-    public string Summary { get; init; }
-
-    [Required]
-    public CoverType Type { get; init; }
   }
 
   public class BookWithStats
@@ -36,11 +31,6 @@ namespace BookApi.Models
 
     [Required]
     public string Author { get; init; }
-
-    public string Summary { get; init; }
-
-    [Required]
-    public CoverType Type { get; init; }
 
     public int? CopiesSold { get; init; }
   }

@@ -61,7 +61,6 @@ namespace BookApi.Controllers
         Id = book.Id,
         Author = book.Author,
         Title = book.Title,
-        Type = book.Type,
         CopiesSold = stats?.CopiesSold,
       });
     }

@@ -13,11 +13,6 @@ export interface Book {
   id: number;
   title: string;
   author: string;
-  summary?: string;
-  /**
-   * Possible values include: 'Hardcover', 'Paperback', 'eBook'
-   */
-  type: Type;
 }
 
 /**
@@ -27,11 +22,6 @@ export interface BookWithStats {
   id: number;
   title: string;
   author: string;
-  summary?: string;
-  /**
-   * Possible values include: 'Hardcover', 'Paperback', 'eBook'
-   */
-  type: Type;
   copiesSold?: number;
 }
 
@@ -48,14 +38,6 @@ export interface BookApiClientOptions extends ServiceClientOptions {
 export interface BooksStoreBookOptionalParams extends msRest.RequestOptionsBase {
   body?: Book;
 }
-
-/**
- * Defines values for Type.
- * Possible values include: 'Hardcover', 'Paperback', 'eBook'
- * @readonly
- * @enum {string}
- */
-export type Type = 'Hardcover' | 'Paperback' | 'eBook';
 
 /**
  * Contains response data for the getAll operation.

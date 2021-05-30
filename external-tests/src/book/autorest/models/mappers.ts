@@ -32,19 +32,6 @@ export const Book: msRest.CompositeMapper = {
         type: {
           name: "String"
         }
-      },
-      summary: {
-        serializedName: "summary",
-        type: {
-          name: "String"
-        }
-      },
-      type: {
-        required: true,
-        serializedName: "type",
-        type: {
-          name: "String"
-        }
       }
     }
   }
@@ -73,19 +60,6 @@ export const BookWithStats: msRest.CompositeMapper = {
       author: {
         required: true,
         serializedName: "author",
-        type: {
-          name: "String"
-        }
-      },
-      summary: {
-        serializedName: "summary",
-        type: {
-          name: "String"
-        }
-      },
-      type: {
-        required: true,
-        serializedName: "type",
         type: {
           name: "String"
         }
