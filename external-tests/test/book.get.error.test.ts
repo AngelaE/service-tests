@@ -7,7 +7,6 @@ import { RequestError } from "../src/request-error";
 
 describe("Book - Stats API returns Internal Server Error", () => {
 
-    // only runs on local machine for now
     const mb = new Mountebank();
     const bookApi = new BookApiClient({ baseUri: `http://localhost:5000` });
 
@@ -19,7 +18,6 @@ describe("Book - Stats API returns Internal Server Error", () => {
                     .withJSONBody(new RequestError('Internal Server Error', 500)))
         );
 
-        // act
         try {
             await mb.createImposter(imposter);
         }

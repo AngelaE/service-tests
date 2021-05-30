@@ -25,7 +25,6 @@ describe("Book - Stats API returns Transient Error", () => {
 
         );
 
-        // act
         try {
             await mb.createImposter(imposter);
         }

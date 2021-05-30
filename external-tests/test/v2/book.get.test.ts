@@ -1,26 +1,20 @@
 import { assert, expect } from "chai"
 
-import { Response, Imposter, Mountebank, Stub, EqualPredicate, HttpMethod, NotFoundResponse } from '@anev/ts-mountebank';
-import { BookApiClient } from "../src/book/autorest/bookApiClient";
-import * as config from '../src/config';
+import { Mountebank } from '@anev/ts-mountebank';
+import { BookApiClient } from "../../src/book/autorest/bookApiClient";
+import * as config from '../../src/config';
+import { StatsImposterBuilder } from "../../src/bookstats/stats-imposter-builder";
 
-describe("Book - GetBook by Id", () => {
+describe("v2 Book - GetBook by Id", () => {
 
-    // only runs on local machine for now
     const mb = new Mountebank();
     const bookApi = new BookApiClient({ baseUri: `http://localhost:5000` });
 
     before(async () => {
-        let imposter = new Imposter().withPort(config.getStatsApiPort()).withStub(
-            new Stub()
-                .withPredicate(new EqualPredicate()
-                    .withMethod(HttpMethod.GET)
-                    .withPath(`/Stats/1`))
-                .withResponse(new Response()
-                    .withStatusCode(200)
-                    .withJSONBody({ bookId: 1, copiesSold: 2405 }))
-        )
-            .withStub(new Stub().withResponse(new NotFoundResponse()));
+        let imposter = new StatsImposterBuilder('book.getv2', config.getStatsApiPort())
+            .withBookStats(1, {bookId: 1, copiesSold: 2405})
+            .withBookStatsError(1, {status: 404, title: 'Not Found'})
+            .create();
 
         try {
             await mb.createImposter(imposter);
