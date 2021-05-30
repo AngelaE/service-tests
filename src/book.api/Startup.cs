@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Polly;
+using Polly.Extensions.Http;
 using Swashbuckle.AspNetCore.Annotations;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
@@ -41,13 +43,20 @@ namespace BookApi
           .AddJsonOptions(o => { o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); })
           .Services.AddSingleton<IBookStore, InMemoryBookStore>();
 
-      services.AddHttpClient<IBookStatsClient, StatsClient>();
+      var retryPolicy = HttpPolicyExtensions
+        .HandleTransientHttpError()
+        .WaitAndRetryAsync(2, retryAttempt => TimeSpan.FromMilliseconds(100));
+
+      services.AddHttpClient<IBookStatsClient, StatsClient>()
+        .AddPolicyHandler(retryPolicy);
+
       services.AddScoped<IServiceDiscovery, ServiceDiscovery>();
       services.AddScoped<IBookStatsClient, StatsClient>(c =>
      {
        var httpClient = c.GetRequiredService<IHttpClientFactory>()
                  .CreateClient(nameof(IBookStatsClient));
        httpClient.Timeout = TimeSpan.FromMilliseconds(200);
+       
        var baseUri = c.GetRequiredService<IServiceDiscovery>().GetServiceUri("bookstats");
        return new StatsClient(baseUri, httpClient);
      });

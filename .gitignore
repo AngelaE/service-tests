@@ -15,3 +15,4 @@ external-tests/src/bookstats/autorest/bookStatsApiContext.ts
 external-tests/src/bookstats/autorest/models/parameters.ts
 external-tests/src/bookstats/autorest/models/statsOperationsMappers.ts
 external-tests/src/bookstats/autorest/operations/index.ts
+mb.pid
