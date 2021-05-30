@@ -1,8 +1,5 @@
 import { assert, expect } from "chai";
 import { BookApiClient } from "../src/book/autorest/bookApiClient";
-import { Stats } from "../src/bookstats";
-
-
 
 describe("Book - GetBook by Id", () => {
 
