@@ -78,7 +78,7 @@ namespace BookApi.IntegrationTests
       var bookApiClient = new BookApiClient(client, false);
 
       // Act
-      var book = await bookApiClient.Books.StoreBookAsync(new Book { Id = 3, Title = "test title", Author = "author", Type = Type.EBook });
+      var book = await bookApiClient.Books.StoreBookAsync(new Book { Id = 3, Title = "test title", Author = "author"});
 
       // Assert
       book.Should().NotBeNull();
@@ -88,7 +88,7 @@ namespace BookApi.IntegrationTests
     public async Task Create_book_throws_BadRequest_for_string_id()
     {
       var client = _factory.CreateClient();
-      var bookString = JsonSerializer.Serialize(new Book { Id = 3, Title = "test title", Author = "author", Type = Type.EBook });
+      var bookString = JsonSerializer.Serialize(new Book { Id = 3, Title = "test title", Author = "author"});
       bookString = bookString.Replace("3", "invalid");
 
       var content = new StringContent(bookString,
