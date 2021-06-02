@@ -21,14 +21,7 @@ describe("Book - GetBook by Id", () => {
                     .withJSONBody({ bookId: 1, copiesSold: 2405 }))
         )
             .withStub(new Stub().withResponse(new NotFoundResponse()));
-
-        try {
             await mb.createImposter(imposter);
-        }
-        catch (error) {
-            console.log(error);
-            assert.fail('The mock response could not be created');
-        }
     })
 
     it('returns a book with stats if stats are available', async () => {

@@ -15,14 +15,7 @@ describe("v2 Book - GetBook by Id", () => {
             .withBookStats(1, {bookId: 1, copiesSold: 2405})
             .withBookStatsError(1, {status: 404, title: 'Not Found'})
             .create();
-
-        try {
-            await mb.createImposter(imposter);
-        }
-        catch (error) {
-            console.log(error);
-            assert.fail('The mock response could not be created');
-        }
+        await mb.createImposter(imposter);
     })
 
     it('returns a book with stats if stats are available', async () => {

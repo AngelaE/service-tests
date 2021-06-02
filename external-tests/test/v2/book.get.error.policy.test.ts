@@ -1,4 +1,4 @@
-import { assert, expect } from "chai"
+import { expect } from "chai"
 
 import { Mountebank } from '@anev/ts-mountebank';
 import { BookApiClient } from "../../src/book/autorest/bookApiClient";
@@ -18,14 +18,7 @@ describe("v2 Book - Stats API returns Transient Error", () => {
                 {bookId: 1, copiesSold: 555}
             ])
             .create();
-
-        try {
-            await mb.createImposter(imposter);
-        }
-        catch (error) {
-            console.log(error);
-            assert.fail('The mock response could not be created');
-        }
+        await mb.createImposter(imposter);
     })
 
     it('Book API retries getting stats on transient error and succeeds', async () => {

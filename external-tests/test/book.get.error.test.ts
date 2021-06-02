@@ -1,4 +1,4 @@
-import { assert, expect } from "chai"
+import { expect } from "chai"
 
 import { Response, Imposter, Mountebank, Stub } from '@anev/ts-mountebank';
 import { BookApiClient } from "../src/book/autorest/bookApiClient";
@@ -18,13 +18,7 @@ describe("Book - Stats API returns Internal Server Error", () => {
                     .withJSONBody(new RequestError('Internal Server Error', 500)))
         );
 
-        try {
-            await mb.createImposter(imposter);
-        }
-        catch (error) {
-            console.log(error);
-            assert.fail('The mock response could not be created');
-        }
+        await mb.createImposter(imposter);
     })
 
     it('returns a book without stats if stat service returns internal server error', async () => {

@@ -1,4 +1,4 @@
-import {EqualPredicate, HttpMethod, Imposter, Predicate, Response, Stub} from '@anev/ts-mountebank';
+import {EqualPredicate, HttpMethod, Predicate, Response, Stub} from '@anev/ts-mountebank';
 import { Stats } from '.';
 import { RequestError } from '../request-error';
 import { ImposterBuilder } from './imposter-builder';
@@ -10,7 +10,9 @@ export class StatsImposterBuilder extends ImposterBuilder {
 
     public withBookStats(bookId: number, response: Stats) : StatsImposterBuilder {
         const stub = new Stub()
-            .withPredicate(this.getBookStatsPredicate(bookId))
+            .withPredicate(new EqualPredicate()
+                .withMethod(HttpMethod.GET)
+                .withPath(`/Stats/${bookId}`))
             .withResponse(new Response()
                 .withStatusCode(200)
                 .withJSONBody(response));
