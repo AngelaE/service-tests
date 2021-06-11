@@ -12,7 +12,7 @@ describe("Book - Stats API returns Transient Error", () => {
     const bookApi = new BookApiClient({ baseUri: `http://localhost:5000` });
     const stats: Stats = {bookId: 1, copiesSold: 555};
 
-    before(async () => {
+    it('Book API retries getting stats on transient error and succeeds', async () => {
         let imposter = new Imposter().withPort(config.getStatsApiPort()).withStub(
             new Stub()
                 .withResponse(new Response()
@@ -23,9 +23,7 @@ describe("Book - Stats API returns Transient Error", () => {
                     .withJSONBody(stats))
         );
         await mb.createImposter(imposter);
-    })
 
-    it('Book API retries getting stats on transient error and succeeds', async () => {
         const book = await bookApi.books.get(1);
         expect(book.copiesSold).to.equal(555);
     })

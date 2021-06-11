@@ -11,17 +11,15 @@ describe("v2 Book - Stats API returns Transient Error", () => {
     const mb = new Mountebank();
     const bookApi = new BookApiClient({ baseUri: `http://localhost:5000` });
 
-    before(async () => {
-        let imposter = new StatsImposterBuilder('error.policy', config.getStatsApiPort())
-            .withBookStatsResponses(1, [
-                new RequestError('Internal Server Error', 500),
-                {bookId: 1, copiesSold: 555}
-            ])
-            .create();
-        await mb.createImposter(imposter);
-    })
-
     it('Book API retries getting stats on transient error and succeeds', async () => {
+        let imposter = new StatsImposterBuilder('error.policy', config.getStatsApiPort())
+        .withBookStatsResponses(1, [
+            new RequestError('Internal Server Error', 500), // first response is an error
+            {bookId: 1, copiesSold: 555} // second response is successful with book stats
+        ])
+        .create();
+        await mb.createImposter(imposter);
+        
         const book = await bookApi.books.get(1);
         expect(book.copiesSold).to.equal(555);
     })
