@@ -13,7 +13,7 @@ describe("v2 Book - GetBook by Id", () => {
     before(async () => {
         let imposter = new StatsImposterBuilder('book.getv2', config.getStatsApiPort())
             .withBookStats(1, {bookId: 1, copiesSold: 2405})
-            .withBookStatsError(1, {status: 404, title: 'Not Found'})
+            .withBookStatsError(2, {status: 404, title: 'Not Found'})
             .create();
         await mb.createImposter(imposter);
     })
